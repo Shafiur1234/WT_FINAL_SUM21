@@ -69,7 +69,7 @@
 					$hasError=true;
 					$err_password="Password Required";
 				}
-			    elseif(strlen($_POST["password"])>= 5) 
+			    elseif(!strlen($_POST["password"])>= 5) 
 				 {
 					 $hasError = true;
 					 $err_password = "Password must have atleast 5 character";
@@ -79,11 +79,11 @@
 					$hasError = true;
 					$err_password = "Password must have atleast one special character(# or ?)";
 				}
-				elseif(!ctype_upper($_POST["password"]) && !ctype_lower($_POST["password"]))
-				{
-					$hasError = true;
-					$err_password = "Password must have combination of upper and lower character";
-				}
+				// elseif(!ctype_upper($_POST["password"]) && !ctype_lower($_POST["password"]))
+				// {
+					// $hasError = true;
+					// $err_password = "Password must have combination of upper and lower character";
+				// }
 				else
 				{
 					$password=$_POST["password"];
@@ -92,7 +92,7 @@
 				
 		if(!$hasError)	
 			{	
-				$rs = insertUser($name,$uname,$_POST["email"],$_POST["password"]);
+				$rs = insertUser($name,$userName,$_POST["email"],$_POST["password"]);
 				if($rs === true){
 					header("Location: login.php");
 				}
@@ -104,7 +104,7 @@
 			$hasError=true;
 			$err_userName="UserName Required";
 		}
-		elseif (strlen($_POST["userName"]) <6){
+		elseif (!strlen($_POST["userName"]) >6){
 			$hasError = true;
 			$err_userName = "UserName must be greater than 6 characters";
 		}
@@ -122,7 +122,7 @@
 					$hasError=true;
 					$err_password="Password Required";
 				}
-			    elseif(strlen($_POST["password"])>= 5) 
+			    elseif(!strlen($_POST["password"])>= 5) 
 				 {
 					 $hasError = true;
 					 $err_password = "Password must have atleast 5 character";
@@ -132,11 +132,11 @@
 					$hasError = true;
 					$err_password = "Password must have atleast one special character(# or ?)";
 				}
-				elseif(!ctype_upper($_POST["password"]) && !ctype_lower($_POST["password"]))
-				{
-					$hasError = true;
-					$err_password = "Password must have combination of upper and lower character";
-				}
+				// elseif(!ctype_upper($_POST["password"]) && !ctype_lower($_POST["password"]))
+				// {
+					// $hasError = true;
+					// $err_password = "Password must have combination of upper and lower character";
+				// }
 				else
 				{
 					$password=$_POST["password"];
@@ -155,7 +155,7 @@
 		return execute ($query);
 	}
 	function authenticateUser($userName,$password){
-		$query = "select*from users where username= '$userName' and password '$password'";
+		$query = "select * from users where username= '$userName' and password '$password'";
 	    $rs = get($query);
 		if(count($rs)>0){
 			return true;

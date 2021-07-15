@@ -24,8 +24,8 @@
 							echo "<tr>";
 								echo "<td>$i</td>";
 								echo "<td>".$c["name"]."</td>";
-								echo '<td><a href="editcategory.php?id='.$id.'" class="btn btn-success">Edit</a></td>';
-								echo '<td><a class="btn btn-danger">delete</td>';
+								echo '<td><a href="editcategory.php?id='.$id.'">Edit</a></td>';
+								echo '<td>delete</td>';
 							echo "</tr>";
 							$i++;
 						}

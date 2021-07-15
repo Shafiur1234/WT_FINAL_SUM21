@@ -29,8 +29,8 @@
 		}
 		$err_db =$rs;
 	}
-	else if (isset($_POST[""])){
-		f(empty($_POST["name"])){
+	else if (isset($_POST["edit_category"])){
+		if(empty($_POST["name"])){
 			$hasError=true;
 			$err_name="Name Required";
 		}
@@ -52,6 +52,7 @@
 			header("Location: allcategories.php");
 		}
 		$err_db =$rs;
+		
 	}
 	function insertCategory($name){
 		$query="insert into categories values(NULL,'$name')";
@@ -59,12 +60,12 @@
 	}	
 	
 	function getAllCategories(){
-		$query= "select*from categories";
+		$query= "select * from categories";
 		$rs = get($query);
 		return $rs;
 	}
 	function getCategory($id){
-		$query = "select*from categories where id=$id";
+		$query = "select * from categories where id=$id";
 		$rs = get($query);
 		result $rs[0];
 	}
