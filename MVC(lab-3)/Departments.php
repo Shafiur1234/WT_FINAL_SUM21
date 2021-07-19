@@ -1,12 +1,11 @@
-<?php
+<?php 
     require_once 'controllers/DepartmentController.php';
-	$students=getStudents();
+	$departments=getAllDepartments();
 	
-    
 ?>
 <html>
 	<head></head>
-	<h3>All Students</h3>
+	<h3>All Departments</h3>
 	<table>
 	<thead>
 	    <th>Sl#</th>
@@ -17,15 +16,10 @@
 	<tbody>
 	<?php 
 	$i = 1;
-	foreach($students as $d){
+	foreach($departments as $d){
 		echo "<tr>";
 		  echo "<td>$i</td>";
 		  echo "<td>".$d["name"]."</td>";
-		  echo "<td>".$d["dob"]."</td>";
-		  echo "<td>".$d["cgpa"]."</td>";
-		  echo "<td>".$d["credit"]."</td>";
-		  echo "<td>".$d["dept_id"]."</td>";
-		  
 		  echo "</tr>";
 		  $i++;
 	}
