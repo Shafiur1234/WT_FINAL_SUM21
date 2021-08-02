@@ -1,32 +1,22 @@
-<?php 
-	include 'header.php';
+<?php include 'header.php';
 	include 'controllers/CategoryController.php';
- ?>
-<html>
-	<body>
-		<fieldset>
-		<form action="" method = "post">
-			<table align="center">
-					<tr>
-						<td colspan="2" align="center"><h5 class="text-danger"><?php echo $err_db; ?> </h5></td>
-					</tr>
-					<tr>
-						<td>Name: </td>
-						<td align="center"><input name="Name" value="<?php echo $name;?>" type="text"></td><br> <span><?php echo $err_name;?></span></td>
-					</tr>
-					<tr>
-						<td align="center" colspan="2"><input name="add_category" type="submit" value="Add Category"></td>
-					</tr>
-			</table>
+?>
+<!--addproduct starts -->
+	
+	<div class="center">
+		<h5 class="text-danger"><?php echo $err_db;?></h5>
+		<form action=""  method="post" class="form-horizontal form-material">
+			<div class="form-group">
+				<h4 class="text">Name:</h4> 
+				<input type="text" name="name" class="form-control">
+			</div>
+			
+			<div class="form-group text-center">
+				
+				<input type="submit" name="add_category" class="btn btn-success" value="Add Category" class="form-control">
+			</div>
 		</form>
-		</fieldset>
-	</body>	
-</html>
-<?php include 'footer.php'; ?>
+	</div>
 
-
-
-
-
-
-
+<!--addproduct ends -->
+<?php include 'footer.php';?>

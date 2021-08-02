@@ -3,29 +3,22 @@
 	$id = $_GET["id"];
 	$c = getCategory($id);
 ?>
-
-<table align="center">
-	<tr align="center">
-		<td>
-		<h5 class="text-danger"><?php echo $err_db;?></h5>
-		<td>
-	</tr>
-	<form action="" method="post">
-		<tr align="center">
-			<td>
-			<h4>Name:</h4> 
+<!--edit category starts -->
+<div class="center">
+	<h5 class="text-danger"><?php echo $err_db;?></h5>
+	<form action="" method="post" class="form-horizontal form-material">
+		<div class="form-group">
+			<h4 class="text">Name:</h4> 
 			<input type="hidden" name="id" value="<?php echo $c["id"];?>">
-			<input type="text" name="name" value="<?php echo $c["name"];?>">
-			</td>
-		</tr>
-
-		<tr align="center">
-			<td>
-			<input type="submit" name="edit_category" class="btn btn-success" value="Edit Category">
-			</td>
-		</tr>
+			<input type="text" name="name" value="<?php echo $c["name"];?>" class="form-control">
+		</div>
+		
+		<div class="form-group text-center">
+			
+			<input type="submit" name="edit_category" class="btn btn-success" value="Edit Category" class="form-control">
+		</div>
 	</form>
-</table>
+</div>
 
-
+<!--edit category ends -->
 <?php include 'footer.php';?>

@@ -1,60 +1,38 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php';?>
 <?php
+
 	include 'controllers/UserController.php';
 ?>
 
-
-
-<html>
-	<body>
-		<fieldset>
-	<form action="" method="post">
-		<table align="center">
-			<tr>
-				<td colspan="2" align="center"> <hr></td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center"><h1><b>Sign Up</b></h1></td>
-			</tr>
-			<tr>
-				<td><h5><?php echo $err_db; ?></h5></td>
-			<tr>
-				<td colspan="2" align="center"> <hr></td>
-			</tr>
-			<tr>
-				<td align="right">Name</td>
-				<td><input name="name" value="<?php echo $name;?>" type="text"><br>
-					<span><?php echo $err_name;?></span>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">Username</td>
-				<td><input name="userName" type="text" value="<?php echo $userName;?>"><br>
-					<span><?php echo $err_userName;?></span>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">Email</td>
-				<td>
-					<input name="email" type="text" value="<?php echo $email;?>">
-					<br>
-					<span><?php echo $err_email;?></span>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">Password</td>
-				<td><input name="password" type="password" value="<?php echo $password;?>">
-					<br><span><?php echo $err_password;?></span>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center"> 
-				<input type="submit" name="sign_up" value="Sign up">
-				</td>
-			</tr>
-		</table>
+<!--sign up starts -->
+<div class="center-login">
+	<h1 class="text text-center">Sign Up</h1>
+	<h5 class="text-danger"><?php echo $err_db;?></h5>
+	<form action="" method="post" class="form-horizontal form-material">
+		<div class="form-group">
+			<h4 class="text">Name</h4> 
+			<input type ="text" name="uname" onfocusout="checkUsername(this)"  value="<?php echo $uname;?>" class="form-control">
+			<span id="err uname" class="text-danger"><?php echo $err_uname;?></span>
+		</div>
+		<div class="form-group">
+			<h4 class="text">Username</h4> 
+			<input type="text" name="uname" value="<?php echo $uname;?>" class="form-control">
+			<span class="text-danger"><?php echo $err_uname;?></span>
+		</div>
+		<div class="form-group">
+			<h4 class="text">Email</h4> 
+			<input type="text" name="email" class="form-control">
+		</div>
+		<div class="form-group">
+			<h4 class="text">Password</h4> 
+			<input type="password" name="pass" class="form-control">
+		</div>
+		<div class="form-group text-center">
+			
+			<input type="submit" name="sign_up" class="btn btn-success" value="Sign Up" class="form-control">
+		</div>
 	</form>
-	</fieldset>
-</body>
-</html>
-					
+</div>
+<script src="js/signup.js"></script>
+<!--sign up ends -->
+<?php include 'footer.php';?>
