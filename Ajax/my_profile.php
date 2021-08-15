@@ -1,6 +1,6 @@
 <html>
 	<head></head>
-	<? $name = "Shafiur Rahman";?>
+	<?php $name = "Shafiur Rahman";?>
 	<body>
 		<h1 align="center">My Profile</h1>
 		<table align="center">

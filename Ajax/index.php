@@ -1,5 +1,5 @@
 <script>
-	function get id{
+	function get (id){
 		return document.getElementById(id);
 	}
 	function loadDoc(){
